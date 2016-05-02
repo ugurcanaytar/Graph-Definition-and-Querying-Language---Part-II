@@ -1,0 +1,77 @@
+
+**********************************************
+
+BNF GRAMMAR FOR GRAPH DEFINITION LANGUAGE
+GROUP 13 - PROJECT PART 2
+LANGUAGE NAME: SAPL
+
+**********************************************
+
+
+<program>  -> beginmain <stmt_list> endmain
+
+<stmt_list>  -> <stmt>
+			  | <stmt> <stmt_list>
+
+<stmt> -> <assign_stmt>
+	   | <logic_stmt>
+	   | <comment_stmt>
+	   | <def_stmt>
+	   
+<def_stmt> -> <data_types> <identifiers>
+
+<data_types> -> FLOAT
+		 	| STRING
+		 	| INTEGER
+		 	| EDGE
+		 	| VERTEX
+		 	| PROPERTY
+		 	| LIST
+		 	| MAP
+			| DIRECTED_GRAPH
+			| UNDIRECTED_GRAPH
+			
+<identifiers> -> <identifier>
+			  | <identifier> <assign_stmt>
+			  | <identifier> <function_callers>
+	
+<assign_stmt> -> '=' '(' STRING ',' STRING ')'
+			| '=' '(' STRING ',' STRING ')'
+			| '=' '(' STRING ',' INTEGER ')'
+			| '=' '(' STRING ',' INTEGER ')'
+			| '(' STRING ',' STRING ')'
+			| '(' STRING ',' INTEGER ')'
+			| '(' ')'
+			
+
+
+<function_callers> -> "Add" '(' <parameter> ')' 
+		    	| "AddVertex" '(' <vertex> ')' 
+				| "ConnectTo" '(' <vertex> ',' <vertex> ')'
+		    	| "Connect" '( ' <parameter> ',' <parameter> ' ) '
+		    	| "AttachProperty" '(' <property> ')'
+		    	| "AddProperty" '(' <property> ')'
+		    	| "Delete" '(' <parameters> ')'
+		    	| "Contains" '(' STRING ')'
+
+
+
+<logic_stmt> -> < expr > 
+	      | <expr> <logical_op>
+	      | <expr> <logical_op> <expr>
+
+<comment_stmt> -> '/' '/' <stmt_list>
+
+
+<expr>  ->  IDENTIFIER
+   		  | <function_callers>
+		  | UNDIRECTED_GRAPH
+		  | DIRECTED_GRAPH
+		  | EDGE
+		  | VERTEX
+		  | LIST
+		  | MAP
+		  | PROPERTY
+	 
+	 
+<logical_ op> -> '==' | '!=' | '<' | '>' | '<=' | '>=' | 'and' | 'or' | '->' | '*' | '|' | ':' | '!'

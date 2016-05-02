@@ -1,0 +1,15 @@
+beginmain
+
+	// Example for Directed Queries
+
+	Path exA = ("example1", 123)->("example2", 3232)
+	
+	Path exB = exA->("example3", 7323)|("example4", 3238)
+	
+	Path exC = exB->("example5", 9)*
+	
+	Path exD = exC->(name=="example1")->(Contains: "example3")->()
+	
+	Path exE = exA->(!Contains: "example10")->exE
+
+endmain

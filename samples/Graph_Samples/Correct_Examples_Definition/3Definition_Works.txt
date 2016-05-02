@@ -1,0 +1,27 @@
+beginmain
+
+	Vertex uvertex1("Ali", 1444)
+	Vertex uvertex2("Veli", 2033)
+	Vertex uvertex3("Mehmet", 3013)
+	Vertex uvertex4("Ayse", 9999)
+	Vertex uvertex5("Huseyin", 2)
+	
+	Edge edge1
+	Edge edge2
+	Edge edge3
+	Edge edge4
+	Edge edge5
+	
+	edge1.ConnectTo(uvertex1, uvertex2)
+	edge2.ConnectTo(uvertex2, uvertex3)
+	edge3.ConnectTo(uvertex3, uvertex4)
+	edge4.ConnectTo(uvertex5, uvertex4)
+	edge5.ConnectTo(uvertex2, uvertex5)
+	
+	ugraph.AddVertex(vertex1)
+	ugraph.AddVertex(vertex2)
+	ugraph.AddVertex(vertex3)
+	ugraph.AddVertex(vertex4)
+	ugraph.AddVertex(vertex5)
+
+endmain

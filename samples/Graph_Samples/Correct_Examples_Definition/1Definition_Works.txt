@@ -1,0 +1,58 @@
+beginmain
+	
+	Directed bDirectedGraph
+	Vertex vertex1()
+	Property proVertex1 = ("Vertex1", 1)
+	vertex1.AddProperty(proVertex1)
+	
+	Vertex vertex2()
+	Property proVertex2 = ("Vertex2", 2)
+	vertex2.AddProperty(proVertex2)
+	
+	Vertex vertex3()
+	Property proVertex3 = ("Vertex3", 3)
+	vertex3.AddProperty(proVertex3)
+	
+	Vertex vertex4()
+	Property proVertex4
+	proVertex4 = ("Vertex4", 4)
+	vertex4.AddProperty(proVertex4)
+	
+	
+	Edge edge1and2
+	Property proEdge1and2 = ("Edge1and2", 12)
+	edge1and2.AttachProperty(proEdge1and2)
+	edge1and2.Connect(vertex1, vertex2)
+	
+	Edge edge2and3
+	Property proEdge2and3 = ("Edge2and3", 23)
+	edge2and3.AttachProperty(proEdge2and3)
+	edge1and2.Connect(vertex2, vertex3)
+
+	Edge edge1and3
+	Property proEdge1and3 = ("Edge1and3", 13)
+	edge1and3.AttachProperty(proEdge1and3)
+	edge1and2.Connect(vertex1, vertex3)
+	
+	Edge edge1and4
+	Property proEdge1and3 = ("Edge1and4", 14)
+	edge1and4.AttachProperty(proEdge1and4)
+	edge1and4.Connect(vertex1, vertex4)
+	
+	Edge edge4and2
+	Property proEdge1and3 = ("Edge4and2", 42)
+	edge1and3.AttachProperty(proEdge4and2)
+	edge4and2.Connect(vertex4, vertex2)
+	
+	Edge edge3and4
+	Property proEdge1and3 = ("Edge3and4", 34)
+	edge1and3.AttachProperty(proEdge3and4)
+	edge3and4.Connect(vertex3, vertex4)
+	
+	aDirectedGraph.AddVertex(vertex1)
+	aDirectedGraph.AddVertex(vertex2)
+	aDirectedGraph.AddVertex(vertex3)
+	aDirectedGraph.AddVertex(vertex4)
+	
+endmain
+

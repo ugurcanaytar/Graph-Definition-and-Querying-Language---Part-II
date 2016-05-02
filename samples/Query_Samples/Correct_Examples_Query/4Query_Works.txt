@@ -1,0 +1,15 @@
+beginmain
+	
+	// Example for Undirected Queries
+	
+	Path myNewExOne = (name=="SAPL")->()->(name=="DENEME")|(name=="MERHABA")
+	
+	Path myNewExTwo = myNewExOne->(value == 123)->(value>3)->(name=="SAPL")
+	
+	Path myNewExThree = ()*->("SAPLPROJE", 123)
+	
+	Path myNewExFour = ("MERHABA", 100)->()*->myNewExFour
+	
+	Path myNewExFive = myNewExOne->(name=="MRBPL")
+
+endmain

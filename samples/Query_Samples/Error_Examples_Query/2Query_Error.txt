@@ -1,0 +1,11 @@
+beginmain
+
+	// Errornous Example for Undirected Queries
+
+	Path ua = (name=="Ali")->()->(name=="Mehmet")|(name=="Huseyin")
+	
+	Path ub = ua->(value == 9999)->(value>3)->(name==3)
+	
+	//It will occur error because name can be assigned only to String variable.
+	
+endmain

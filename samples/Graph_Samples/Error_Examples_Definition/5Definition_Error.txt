@@ -1,0 +1,20 @@
+beginmain
+
+	Vertex uvertex1("Ali", 1444)
+	Vertex uvertex2("Veli", 2033)
+	Vertex uvertex3("Mehmet", 3013)
+	
+	Edge edge1
+	Edge edge2
+	Edge edge3
+	
+	edge1.ConnectTo(uvertex1, uvertex2)
+	edge2.ConnectTo(uvertex2, uvertex3)
+	edge3.ConnectTo(uvertex3, uvertex4)
+	
+	ugraph.AddVertex(vertex1, vertex2)
+	
+	// It will give error because AddVertex add only 1 Vertex variable at one time
+	// not 2.
+
+endmain

@@ -1,0 +1,17 @@
+beginmain
+
+	// Example for Directed Queries
+
+	Path pathA = ("vertex1", 1)->("vertex2", 2)
+	
+	Path pathB = pathA->("vertex7", 7)|("vertex8", 8)
+	
+	Path pathC = pathB->("vertex9", 9)*
+	
+	Path pathD = (name=="vertex1")->(Contains: "vertex3")->(value>1)->()
+	
+	Path pathE = pathA->(!Contains: "vertex6")->pathE
+
+endmain
+
+	

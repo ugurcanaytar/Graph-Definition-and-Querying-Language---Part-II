@@ -1,0 +1,10 @@
+beginmain
+	
+	Directed aDirectedGraph
+	Vertex vertex1("Vertex1", "one")
+	Vertex vertex2("Vertex2", "two")
+	Vertex vertex3("Vertex3", "three", "four")
+	
+	// It will give error because Initializing operator only takes 2 parameters, not 3.
+
+endmain

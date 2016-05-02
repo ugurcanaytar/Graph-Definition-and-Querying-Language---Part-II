@@ -1,0 +1,16 @@
+beginmain
+
+	Directed aDirectedGraph
+	Vertex vertex1("Vertex1", 1)
+	Vertex vertex2("Vertex2", 2)
+	Vertex vertex3("Vertex3", 3)
+		
+	Edge edge1and2
+	Property proEdge1and2 = ("Edge1and2", 12)
+	edge1and2.AttachProperty(proEdge1and2)
+	edge1and2.Connect(vertex1, vertex2, vertex3)
+	
+	// It will give error because Connect function only takes 2 Vertex data typed
+	// variables as its parameters not 3 Vertex parameter
+
+endmain

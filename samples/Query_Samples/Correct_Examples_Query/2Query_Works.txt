@@ -1,0 +1,15 @@
+beginmain
+
+	// Example for Undirected Queries
+
+	Path ua = (name=="Ali")->()->(name=="Mehmet")|(name=="Huseyin")
+	
+	Path ub = ua->(value == 9999)->(value>3)*->(name=="Ali")
+	
+	Path uc = ()*->("Ayse", 9999)
+	
+	Path ud = ("Huseyin", 2)->()*->ud
+	
+	Path ue = ua->(value>3)*->(name=="Huseyin")
+	
+endmain

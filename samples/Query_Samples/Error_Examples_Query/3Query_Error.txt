@@ -1,0 +1,11 @@
+beginmain
+
+	// Errornous Example for Directed Queries
+
+	Path firstPath = ("firstPath", 232321)->("secondPath", 232323)->("thirdPath", 33232)
+	
+	Path secondPath = firstPath->(Contains:)
+	
+	// Missing value for contains to check whether path contains or not.
+
+endmain

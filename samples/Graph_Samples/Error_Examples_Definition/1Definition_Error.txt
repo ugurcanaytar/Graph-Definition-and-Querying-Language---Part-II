@@ -1,0 +1,14 @@
+beginmain
+	
+	Directed bDirectedGraph
+	Directed airectedGraph
+	Directed cDirectedGraph
+	Vertex vertex1()
+	Property proVertex1 = ("Vertex1", 1)
+	vertex1.AddProperty(proVertex1, "myVertex")
+	
+	
+	// It will give error because AddProperty function only takes only 1 Property
+	// data type as its parameter not additional String parameter.
+	
+endmain

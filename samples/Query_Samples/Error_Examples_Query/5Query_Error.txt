@@ -1,0 +1,12 @@
+beginmain
+	
+	// Errornous Example for Undirected Queries
+	
+	Path myNewExOne = (name=="SAPL")->()->(name=="DENEME")|(name=="MERHABA")
+	
+	Path myNewExTwo = myNewExOne->(value = 123)
+	
+	// It will give error because, assignment operator must contains double times
+	// "==" assignment, not single "=" one.
+	
+endmain

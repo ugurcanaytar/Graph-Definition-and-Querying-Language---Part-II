@@ -1,0 +1,109 @@
+
+**********************************************
+
+BNF GRAMMAR FOR QUERY DEFINITION LANGUAGE
+GROUP 13 - PROJECT PART 2
+LANGUAGE NAME: SAPL
+
+**********************************************
+
+
+<program>  -> beginmain <stmt_list> endmain
+
+<stmt_list>  -> <stmt>
+			  | <stmt> <stmt_list>
+
+<stmt> -> <assign_stmt>
+	   | <logic_stmt>
+	   | <comment_stmt>
+	   | <def_stmt>
+	   
+<def_stmt> -> <data_types> <identifiers>
+
+<data_types> -> FLOAT
+		 	| STRING
+		 	| INTEGER
+		 	| EDGE
+		 	| VERTEX
+		 	| PROPERTY
+		 	| LIST
+		 	| MAP
+			| PATH
+			
+<identifiers> -> IDENTIFIER
+			  | IDENTIFIER <assign_stmt>
+			  | IDENTIFIER <function_callers>
+	
+<assign_stmt> -> '=' <path>
+	 
+<path> ->  '->' <path>
+		| IDENTIFIER '->' <path>
+		| IDENTIFIER '->' IDENTIFIER
+		| IDENTIFIER '->' IDENTIFIER <path>
+		| '->' IDENTIFIER
+		| '*' '->' <path>
+		| '(' STRING ',' STRING ')' 
+		| '(' STRING ',' INTEGER ')' 
+		| '(' PATH_NAME '==' STRING ')'
+		| '(' PATH_VALUE '==' INTEGER ')'
+		| '(' PATH_VALUE '==' INTEGER ')' <path>
+		| '(' PATH_VALUE '<' INTEGER ')'
+		| '(' PATH_VALUE '<' INTEGER ')' <path>
+		| '(' PATH_VALUE '>' INTEGER ')'
+		| '(' PATH_VALUE '>' INTEGER ')' <path>
+		| '(' PATH_VALUE '>=' INTEGER ')'
+		| '(' PATH_VALUE '>=' INTEGER ')' <path>
+		| '(' PATH_VALUE '<=' INTEGER ')'
+		| '(' PATH_VALUE '<=' INTEGER ')' <path>
+		| '(' ')'
+		| '(' ')' <path>
+		| '(' ')' '*'
+		| '(' ')' '*' <path>
+		| '(' STRING ',' STRING ')' <path>
+		| '(' STRING ',' INTEGER ')' <path>
+		| '(' PATH_NAME '==' STRING ')' <path>
+		| '(' STRING ',' STRING ')' '|' <path>
+		| '(' STRING ',' INTEGER ')' '|' <path>
+		| '(' PATH_NAME '==' STRING ')' '|' <path>
+		| '(' STRING ',' STRING ')' '*' <path>
+		| '(' STRING ',' INTEGER ')' '*' <path>
+		| '(' PATH_NAME '==' STRING ')' '*' <path>
+		| '(' STRING ',' STRING ')' '*' 
+		| '(' STRING ',' INTEGER ')' '*' 
+		| '(' PATH_NAME '==' STRING ')' '*'
+		| '(' PATH_CONTAINS STRING ')' 
+		| '(' '!' PATH_CONTAINS STRING ')' 
+		| '(' PATH_CONTAINS STRING ')' <path>
+		| '(' '!' PATH_CONTAINS STRING ')' <path>
+	
+
+
+<function_callers> -> "Add" '(' IDENTIFIER ')' 
+		    	| "AddVertex" '(' VERTEX ')' 
+				| "ConnectTo" '(' VERTEX ',' VERTEX ')'
+		    	| "Connect" '( ' IDENTIFIER ',' IDENTIFIER ' ) '
+		    	| "AttachProperty" '(' IDENTIFIER ')'
+		    	| "AddProperty" '(' IDENTIFIER ')'
+		    	| "Delete" '(' IDENTIFIER ')'
+		    	| "Contains" '(' STRING ')'
+
+
+<logic_stmt> -> <expr> 
+	      | <expr> <logical_op>
+	      | <expr> <logical_op> <expr>
+
+
+<comment_stmt> -> '/' '/' <stmt_list>
+
+
+<expr> -> <identifiers>  
+    	 | <function_callers>
+		 | 'QUERY'
+		 | 'EDGE'
+		 | 'VERTEX'
+		 | 'LIST'
+		 | 'MAP'
+		 | 'PROPERTY'
+	 
+	 
+<logical_ op> -> '==' | '!=' | '<' | '>' | '<=' | '>=' | 'and' | 'or' | '->' | '*' | '|' | ':' | '!'

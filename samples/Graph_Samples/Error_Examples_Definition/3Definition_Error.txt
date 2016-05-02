@@ -1,0 +1,13 @@
+beginmain
+
+	Directed bDirectedGraph
+	Vertex vertex1()
+	Vertex vertex2()
+	Vertex vertex3()
+	Property proVertex1 = (3, 4)
+	
+	
+	// It will give error because Assignment of Property must take at least 1 String as parameter.
+
+endmain
+

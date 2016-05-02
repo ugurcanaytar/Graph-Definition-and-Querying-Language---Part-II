@@ -1,0 +1,13 @@
+beginmain
+
+	Path firstPath = ("firstPath", 232321)->("secondPath", 232323)->("thirdPath", 33232)
+	
+	Path secondPath = firstPath->("secondPath", 72323)
+	
+	Path thirdPath = secondPath->("thirdPath", 92323)*
+	
+	Path fourthPath = (name=="firstPath")->(Contains: "secondPath")->(value>1)->()
+	
+	Path fifthPath = firstPath->(!Contains: "seventhPath")->fifthPath
+
+endmain

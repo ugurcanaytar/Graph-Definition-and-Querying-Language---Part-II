@@ -1,0 +1,11 @@
+beginmain
+
+	// Errornous Example for Directed Queries
+
+	Path pathA = ("vertex1", 1)->("vertex2", 2)
+	
+	Path pathB = pathA->("vertex7")
+	
+	// It will occur error because path must have 2 parameters, could be in String, or Integer.
+
+endmain

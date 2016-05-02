@@ -1,0 +1,15 @@
+beginmain
+
+	// Errornous Example for Directed Queries
+
+	Path exA = ("example1", 123)->("example2", 3232)
+	
+	Path exB = exA->("example3", 7323)|("example4", 3238)
+	
+	Path exC = exB->("example5", 9)**
+	
+	// It will give error because at the end of statement there must be only
+	// one repetition, not more.
+
+endmain
+
